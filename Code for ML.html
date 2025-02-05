@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: darkred;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: black;
+            font-size: 1.8em;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 12px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 200px;
+        }
+        .yes {
+            background-color: black;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body id="main">
+    <h1 id="question">Will you be my Valentine? ❤️</h1>
+    <div class="buttons" id="buttons">
+        <button class="yes" onclick="showMessage()">Yes</button>
+        <button class="no" onmouseover="moveButton()">No</button>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.body.innerHTML = "<h1 style='color: white; font-size: 2em; text-align: center; padding: 20px;'>Thank you for giving me a chance to make you smile! I can't wait to be there for you and make you feel amazing. This won't be the last time I make you a website btw. (I'm still learning)</h1>";
+        }
+
+        function moveButton() {
+            const noButton = document.querySelector('.no');
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
